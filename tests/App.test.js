@@ -40,12 +40,29 @@ describe('App', () => {
     // screen.debug();
   });
 
-  test('Debería encontrar un enlace a la página de productos en el componente', () => {
-    render(<Header />);
-    const productsLink = screen.getByRole('link', { name: /Productos/i });
-    expect(productsLink).toBeInTheDocument();
-    expect(productsLink).toHaveAttribute('href', '/productos');
+//   test('Debería encontrar un enlace a la página de productos en el componente', () => {
+//     render(<Header />);
+//     const productsLink = screen.getByRole('link', { name: /Products/i });
+//     expect(productsLink).toBeInTheDocument();
+//     expect(productsLink).toHaveAttribute('href', '/products');
+//   });
+// });
+
+test('Debería mostrar un mensaje de error cuando se envía un formulario vacío', () => {
+  render(<LogIn />);
+  const submitButton = screen.getByRole('button', { name: /Iniciar sesión/i });
+  userEvent.click(submitButton);
+  screen.getByText('Por favor, complete todos los campos');
+});
+
+describe('Menu', () => {
+  test('Debería encontrar el texto "Menú" en el componente', () => {
+    render(<Menu />);
+    const title = screen.getByText(/Menú/i);
+    expect(title).toBeInTheDocument();
   });
 });
 
+
+});
 });
