@@ -109,7 +109,7 @@ const FormUsers = ({ state, setState }) => {
           </div>
         </div>
         <div>
-          <label htmlFor="input-password" className="label-text">CLAVE:</label>
+          <label htmlFor="input-password" className="label-text">PASSWORD:</label>
           <div className="box-input">
             <input
               defaultValue={state.userData.password}
@@ -127,17 +127,17 @@ const FormUsers = ({ state, setState }) => {
           <div className="box-option">
             <select id="input-admin" onChange={handleSelectChange} className="select-modal" defaultValue={state.userData.roles.admin ? 'SI' : 'NO'}>
               <option value="NO">NO</option>
-              <option value="SI">SI</option>
+              <option value="SI">YES</option>
             </select>
           </div>
         </div>
         {error.message !== '' && <span>{error.message}</span>}
         <div>
-          <button type="button" className="btn-modal cancel" onClick={closeModal}>Cancelar</button>
+          <button type="button" className="btn-modal cancel" onClick={closeModal}>Cancel</button>
           {state.display.btnEdit ? (
-            <button type="button" className="btn-modal save" onClick={() => handleRequest('PUT')}>Editar</button>
+            <button type="button" className="btn-modal save" onClick={() => handleRequest('PUT')}>Edit</button>
           ) : (
-            <button type="button" className="btn-modal save" onClick={() => handleRequest('POST')}>Guardar</button>
+            <button type="button" className="btn-modal save" onClick={() => handleRequest('POST')}>Save</button>
           )}
         </div>
       </div>
