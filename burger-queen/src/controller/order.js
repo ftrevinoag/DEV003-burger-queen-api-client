@@ -1,5 +1,12 @@
 /* eslint-disable consistent-return */
 
+// Este archivo exporta tres funciones que realizan peticiones HTTP para crear, obtener y actualizar órdenes en la base de datos.
+// Todas las funciones reciben y devuelven datos en formato JSON.
+// Se usa el token almacenado en sessionStorage para autenticar las peticiones en el header Authorization.
+// En caso de errores de autenticación o de que los datos recibidos no sean los esperados, se devuelven errores para manejarlos en la capa superior.
+// Cada función maneja los posibles errores de la respuesta de la petición HTTP a través de un switch en el que 
+// se especifican los diferentes códigos de estado y los errores correspondientes a cada uno de ellos
+
 export const postOrder = (order) => fetch('http://localhost:3000/orders', {
   method: 'POST',
   body: JSON.stringify(order),

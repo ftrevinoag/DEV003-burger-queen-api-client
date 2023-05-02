@@ -1,6 +1,10 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable consistent-return */
 /* eslint-disable prefer-promise-reject-errors */
+
+// Realiza una petición GET al endpoint "/users" para verificar si las credenciales del usuario son correctas
+// Retorna una promesa que se resuelve con el objeto usuario si las credenciales son correctas
+// o se rechaza con un mensaje de error si el email y password son requeridos
 export const postAuth = (user) =>
   fetch('http://localhost:3000/users', {
     method: 'GET',
