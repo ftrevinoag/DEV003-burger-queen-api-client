@@ -1,0 +1,169 @@
+$brown: #411515;
+$gold: #DABC4F;
+$font-pridi: 'Pridi', serif;
+$font-prompt: 'Prompt', sans-serif;
+$gold-2: #b1973b;
+$green: #3DB01C;
+// Mientras tanto
+.modal-container{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .background-modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+  }
+
+  .modal-window{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: $brown;
+    border-radius: 10px;
+    z-index: 20;
+    box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.25);
+    
+
+    p{
+      color: #FFF;
+      font-family: $font-pridi;
+      font-size: 1.8rem;
+      text-align: center;
+      line-height: 60px;
+      height: 60px;
+    }
+
+    .form-modal{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #FFF;
+      border-radius: 0 0 10px 10px;
+    
+      .form-container{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0;
+
+        span{
+          margin: 5px 0 0 10px;
+          font-size: 1.1rem;
+          color: red;
+          font-family: $font-pridi;
+        }
+
+        div{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 25px 0;
+          height: 35px;
+
+          .label-text{
+            font-family: $font-pridi;
+            color: $brown;
+            font-weight: bold;
+            font-size: 1.3rem;
+          }
+
+          .box-input{
+            width: 65%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .input-modal{
+              width: 90%;
+              font-size: 1.2rem;
+              padding: 5px 10px;
+              border: 0;
+              border-bottom: 1px solid gray;
+              outline-color: gray;
+  
+              &::placeholder{
+                font-size: 1.2rem;
+              }
+            }
+
+            .error{
+              border-bottom: 2px solid red;
+              box-shadow: 5px gray;
+              &::placeholder{
+                color: red;
+              }
+            }
+          }
+       
+          .box-option{
+            width: 65%;
+
+            button{
+              height: 100%;
+              width: 50%;
+            }
+          }
+
+          .select-modal{
+            width: 30%;
+            height: 35px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+          }
+
+          .date{
+            font-size: 1.3rem;
+            border-radius: 5px;
+            border: 1px solid gray;
+            padding-left: 3px;
+            height: 35px;
+          }
+
+          .d-error{
+            border: 2px solid red;
+            box-shadow: 5px gray;
+          }
+
+          .sm-product{
+            width: 60%;
+          }
+
+          .btn-modal{
+            width: 48%;
+            font-family: $font-pridi;
+            font-size: 1.2rem;
+            font-weight: bold;
+            height: 50px;
+            border-radius: 9px;
+            border: 0;
+          }
+
+          .cancel{
+            background-color: #E5E5E5;
+            color: rgb(78, 78, 78);
+          }
+
+          .save{
+            background-color: $green;
+          }          
+        }
+
+        .field-p{
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+}

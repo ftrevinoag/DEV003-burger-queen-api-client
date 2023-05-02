@@ -1,0 +1,275 @@
+$gold: #DABC4F;
+$brown: #411515;
+$gray: #5C5C5C;
+$font-pridi: 'Pridi', serif;
+$font-prompt: 'Prompt', sans-serif;
+
+.container-orders{
+  display: flex;
+  flex-direction: row;
+  height: 85vh;
+
+  .products-options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(180deg, #965b25, #503a20);    width: 65%;
+
+    .options-type{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 85%;
+
+      .options-food{
+        border-radius: 9px;
+        background: transparentize($color: #000000, $amount: 0.2);
+        width: 45%;
+        padding: 15px 0;
+        color: white;
+        font-family: $font-pridi;
+        font-size: 25px;
+        border: none;
+        outline: none;
+      }
+
+      .btn-active{
+        border: 3px solid $gold;
+        font-weight: bold;
+      }
+    }
+
+    .box-photos{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      background: transparentize($color: #000000, $amount: 0.2);
+      width: 85%;
+      height: 70%;
+      border-radius: 9px;
+
+      .box-btn-food{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .btn-food{
+          background: #DABC4F;
+          border: none;
+          outline: none;
+          border-radius: 9px;
+          width: 30%;
+          padding: 5px 0;
+          color: #411515;
+          font-family: "Pridi", gitserif;
+          font-size: 20px;
+          margin-top: 10px;
+        }
+      }
+
+      .box-option-food{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        height: 80%;
+        overflow: auto;
+
+        .box-food{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 160px;
+          height: 160px;
+          border-radius: 10px;
+          background: white;
+          background-size: cover;
+          margin-bottom: 30px;
+
+          .img-food{
+            height: 100px;
+            width: auto;
+          }
+          p{
+            text-align: center;
+            font-family: $font-pridi;
+            color: $brown;
+            font-size: 1.2rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .orders-placed{
+    background: $gray;
+    width: 40%;
+
+    .title {
+      text-align: center;
+      font-family: $font-pridi;
+      color: white;
+      font-size: 1.9rem;
+      font-weight: bold;
+    }
+
+    .cliente {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-top: 3px solid $gold;
+      padding: 10px;
+
+      .letter{
+        text-align: center;
+        font-family: $font-pridi;
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .name-client{
+        background: transparentize($color: #000000, $amount: 0.7);
+        border: none;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 5px;
+        width: 60%;
+        height: 25px;
+        outline: none;
+        color:#FFF;
+        font-size: 1rem;
+        padding-left: 10px;
+      }
+    }
+
+    .order-table{
+      width: 100%;
+      font-family: $font-prompt;
+      text-align: center;
+
+      .head-order{
+        background: $gold;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        color: $brown;
+        height: 40px;
+        list-style: none;
+        display: flex;
+        align-items: center;
+      }
+
+      .product-list-container{
+        overflow: auto;
+        height: 40vh;
+        p{
+          color: #FFF;
+          font-size: 1.2rem;
+          margin-top: 1rem;
+        }
+      }
+
+      .order-product{
+        display: flex;
+        align-items: center;
+        list-style: none;
+        border-bottom: 1px solid #FFF;
+        height: 45px;
+        
+        li{
+          color: white;
+          font-size: 1.2rem;
+          overflow:hidden;
+          text-overflow: ellipsis;
+          white-space:nowrap;
+
+          i{
+            color: rgb(214, 117, 117);
+            margin-right: 10px;
+          }
+        }
+        .button-edit{
+          display: flex;
+          justify-content: space-evenly;
+  
+          i{
+            color: #78D84C;
+            font-size: 1.3rem;
+            margin: 5px;
+          }
+        }
+      }
+
+      .qty{
+        width: 25%;
+      }
+      .product-name{
+        width: 45%;
+      }
+      .product-price{
+        width: 20%;
+      }
+      .delete-product{
+        width: 10%;
+      }
+    }
+
+    .total{
+      background: $gold;
+      font-size: 1.3rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      height: 45px;
+      font-family: $font-pridi;
+      font-weight: bold;
+    }
+
+    .options-button{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      margin: 10px 0;
+
+      .cancel{
+        background: #C4C4C4;
+        border-radius: 9px;
+        width: 43%;
+        padding: 5px 0;
+        color: black;
+        font-family: "Pridi", gitserif;
+        font-size: 20px;
+        height: 60px;
+        font-weight: bold;
+        outline: none;
+      }
+
+      .send-cook{
+        background: #78D84C;
+        border-radius: 9px;
+        width: 43%;
+        padding: 5px 0;
+        color: black;
+        font-family: "Pridi", gitserif;
+        font-size: 20px;
+        height: 60px;
+        font-weight: bold;
+        outline: none;
+      }
+    }
+    .error-order{
+      font-family: $font-prompt;
+      text-align: center;
+      color: #FFF;
+    }
+  }
+}

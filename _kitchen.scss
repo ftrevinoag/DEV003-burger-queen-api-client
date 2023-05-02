@@ -1,0 +1,118 @@
+$gold: #DABC4F;
+$brown: #411515;
+$gray: #5C5C5C;
+$green: #78D84C;
+$font-pridi: 'Pridi', serif;
+$font-prompt: 'Prompt', sans-serif;
+
+
+.kitchen-container{
+  display: flex;
+  flex-direction: column;
+  height: 87vh;
+  background: #2F1718;
+  align-items: center;
+
+ .scroll-kitchen{
+  display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 9px;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+  .box-kitchen {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 85%;
+    width: 100%;
+    overflow: auto;
+    align-items: center;
+
+    .kitchen-card{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 75%;
+      border: 3px solid $gold;
+      margin: 10px;
+      border-radius: 9px;
+  
+      .header-card{
+        background: $gold;
+        width: 100%;
+        font-family: $font-prompt;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 0px 10px 0px;
+        font-size: 20px;
+        border-radius: 6px 6px 0px 0px;
+      }
+  
+      .body-card{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 80%;
+  
+        .list{
+          width: 70%;
+          background: $gray;
+          height: 100%;
+          position: relative;
+  
+          td{
+            border-bottom: 1px solid gray;
+            color: white;
+            font-size: 20px;
+            font-family: $font-prompt;
+            align-items: center;
+            
+  
+            i {
+              -webkit-text-stroke: 1px black; 
+              color: #78D84C;
+              margin-left: 25%;
+            }
+           
+          }
+          
+        }
+  
+        .order-ready{
+          width: 30%;
+          background: $green;
+          color:black;
+          border: 2px solid black;
+          font-size: 30px;
+          font-family: $font-pridi;
+          font-weight: bold;
+  
+        }
+        
+        
+      }
+      
+    }
+
+    .not-order{
+      font-family: "Prompt", sans-serif;
+      font-size: 1.3rem;
+      text-align: center;
+      color: #FFF;
+      margin: 50% 1%;
+    }
+  }
+
+ 
+
+ }
+
+  
+}

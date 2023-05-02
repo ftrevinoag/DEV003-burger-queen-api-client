@@ -1,0 +1,36 @@
+$gold: #DABC4F;
+$brown: #411515;
+$font-pridi: 'Pridi', serif;
+$font-prompt: 'Prompt', sans-serif;
+
+.container-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2{
+    font-family: $font-pridi;
+    color: $brown;
+    font-size: 2.5rem;
+    margin: 20px 0;
+  }
+
+  .btn-container{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    button{
+      margin: 20px;
+      color: $brown;
+      background-color: $gold;
+      border: none;
+      width: 200px;
+      height: 50px;
+      border-radius: 10px;
+      font-family: $font-pridi;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+  }
+}
