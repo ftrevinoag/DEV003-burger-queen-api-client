@@ -8,6 +8,17 @@ describe('<Header/>', () => {
     const title = 'Administrador';
     const { getByText } = render(<Header title={title}/>);
     expect(getByText(title)).toBeInTheDocument();
-  })
+  });
 
-})
+  describe('<Header/>', () => {
+    test('Debería encontrar el enlace a la página de inicio', () => {
+      render(<Header />);
+      const homeLink = screen.getByRole('link', { name: /Inicio/i });
+      expect(homeLink).toBeInTheDocument();
+      expect(homeLink).toHaveAttribute('href', '/');
+    });
+  
+
+});
+
+});
