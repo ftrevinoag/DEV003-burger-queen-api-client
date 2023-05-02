@@ -13,10 +13,13 @@ describe('App', () => {
     // screen.debug();
   });
 
-  test('Deberia encontrar el componente Header', () => {
-    render(<Header />);
-    // screen.debug();
-  });
+  describe('Header', () => {
+    test('Debería encontrar el texto "Burger Queen" en el componente', () => {
+      render(<Header />);
+      const title = screen.getByText(/Burger Queen/i);
+      expect(title).toBeInTheDocument();
+    });
+  
 
   test('Deberia encontrar el componente de Login', () => {
     render(<LogIn />);
