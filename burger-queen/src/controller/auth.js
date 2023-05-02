@@ -22,6 +22,10 @@ export const postAuth = (user) =>
     // return (resp);
   });
 
+
+// Realiza una petición GET al endpoint "/users/{email}" para obtener la información del usuario con el correo electrónico proporcionado
+// Retorna una promesa que se resuelve con el objeto usuario si el correo electrónico existe en la base de datos
+// o se rechaza con un mensaje de error si el correo electrónico no se encuentra o hay algún problema de autenticación
 export const getUserByEmail = (email) =>
    fetch(`http://localhost:3000/users/${email}`, {
     method: 'GET',
