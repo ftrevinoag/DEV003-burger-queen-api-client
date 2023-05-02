@@ -7,6 +7,7 @@ import img from '../assets/logo-bq.png';
 
 const Header = ({ title }) => {
   const [display, setDisplay] = useState(false);
+  // Obteniendo el rol y correo electrónico del usuario que inició sesión
   const currentUSerRol = sessionStorage.getItem('currentRol');
   const currentUSerEmail = sessionStorage.getItem('currentEmail');
   return (
@@ -15,6 +16,7 @@ const Header = ({ title }) => {
         <img src={img} alt="logo" className="logo-Header" />
         <p className="title">{title}</p>
         <div className="user-logged">
+        {/ Mostrando el correo electrónico del usuario que inició sesión /}
           <p className="user-name">{currentUSerEmail}</p>
           <i className="user-icon fas fa-user" />
           <div className={display ? 'active menu-icon-container' : 'menu-icon-container'}>
@@ -35,9 +37,11 @@ const Header = ({ title }) => {
           <Link to="/kitchen">
             <li>KITCHEN</li>
           </Link>
+          {/ Si el usuario que inició sesión es un administrador /}
           {currentUSerRol === 'true'
           && (
           <>
+          {/ Enlace a la página de administración de usuarios /}
             <Link to="/userlist">
               <li>Admin users</li>
             </Link>
