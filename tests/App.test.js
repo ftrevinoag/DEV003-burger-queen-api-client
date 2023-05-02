@@ -39,4 +39,13 @@ describe('App', () => {
     render(<ProductList />);
     // screen.debug();
   });
+
+  test('Debería encontrar un enlace a la página de productos en el componente', () => {
+    render(<Header />);
+    const productsLink = screen.getByRole('link', { name: /Productos/i });
+    expect(productsLink).toBeInTheDocument();
+    expect(productsLink).toHaveAttribute('href', '/productos');
+  });
+});
+
 });
