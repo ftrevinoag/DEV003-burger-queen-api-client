@@ -4,25 +4,33 @@
 import React, { useState } from 'react';
 
 const ProductsMenu = ({ state, setState }) => {
+  // Estado local para controlar el botón activo de menú y el tipo de comida mostrado
   const [display, setDisplay] = useState({
     btnMenu: 'all',
     btnType: false,
   });
+
+  // Función que maneja el cambio de menú de acuerdo al tipo seleccionado
   const handleType = (type) => {
     switch (type) {
+      // Si se selecciona el menú 'menu', se filtran los productos que no son de tipo 'breakfast'
       case 'menu':
         setState((prev) => ({ ...prev, products: state.allProducts.filter((product) => product.type !== 'breakfast') }));
+        // Se actualiza el estado para reflejar el botón activo y el tipo de menú seleccionado
         setDisplay({ btnMenu: type, btnType: true });
         break;
       // case 'all':
       //     setProducts(allProducts);
       //     setDisplay({btnMenu: type, btnType: false});
       //   break;
+      // Si se selecciona el menú 'breakfast', se filtran los productos que son de tipo 'breakfast'
       case 'breakfast':
         setState((prev) => (
           { ...prev, products: state.allProducts.filter((product) => product.type === type) }));
-        setDisplay({ btnMenu: type, btnType: false });
+        // Se actualiza el estado para reflejar el botón activo y el tipo de menú seleccionado
+          setDisplay({ btnMenu: type, btnType: false });
         break;
+        // Si se selecciona cualquier otro tipo de menú, se filtran los productos que corresponden a ese tipo
       default:
         setState((prev) => (
           { ...prev, products: state.allProducts.filter((product) => product.type === type) }));
@@ -30,9 +38,10 @@ const ProductsMenu = ({ state, setState }) => {
     }
   };
 
+  // Función que agrega un producto a la lista de la orden
   const addProduct = (item) => {
-    // Hay que buscar si ya está en el array de la orden
-    const result = state.productsList.find((element) => element.product._id === item._id);
+// Verificar si el producto ya está en la lista de la orden
+const result = state.productsList.find((element) => element.product._id === item._id);
 
     if (!result) {
       setState((prev) => ({
