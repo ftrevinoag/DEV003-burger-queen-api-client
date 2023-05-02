@@ -25,3 +25,12 @@ describe('Render', () => {
     expect(user.userEmail).toBe('example@gmail.com');
   });
 });
+
+describe('Comportamiento', () => {
+  test('Debería mostrar un mensaje de error cuando se envía un formulario vacío', () => {
+    render(<FormLogin user= {user} error={error} />);
+    const submitButton = screen.getByRole('button', { name: /Iniciar sesión/i });
+    userEvent.click(submitButton);
+    screen.getByText('Por favor, complete todos los campos');
+  });
+});
