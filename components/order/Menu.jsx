@@ -11,6 +11,7 @@ const MenuView = () => {
     productsList: [],
   });
 
+  // Carga inicial de productos
   useEffect(() => {
     getProducts().then((resp) => {
       setState((prevState) => ({ ...prevState, allProducts: resp, products: resp }));

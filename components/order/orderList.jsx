@@ -8,9 +8,14 @@ import React, { useState } from 'react';
 import { postOrder } from '../../controller/order';
 
 const OrderList = ({ state, setState }) => {
+
+  // Definimos un estado local para el nombre del cliente, que se inicializa como una cadena vacía. 
+  // También definimos un estado para manejar los errores de validación.
   const [clientName, setClientName] = useState('');
   const [error, setError] = useState(false);
 
+
+  // Definimos una función que maneja el cambio de estado del nombre del cliente.
   const handleInputChange = (e) => {
     setClientName(e.target.value);
   };
@@ -18,7 +23,10 @@ const OrderList = ({ state, setState }) => {
   const total = state.productsList.reduce((acc, element) => (
     acc + (element.qty * element.product.price)), 0);
 
-  const increase = (id) => {
+  
+  // se definen tres funciones que manejan el aumento y la disminución de la cantidad de cada producto en la orden, 
+  // así como la eliminación completa de un producto.
+    const increase = (id) => {
     const arr = state.productsList.map((item) => {
       if (item.product._id === id) {
         item.qty += 1;
@@ -51,11 +59,17 @@ const OrderList = ({ state, setState }) => {
     }));
   };
 
+
+  // definimos una función que maneja la cancelación de una orden en curso y restablece los estados a sus valores iniciales.
   const cancelOrder = () => {
     setState((prev) => ({ ...prev, productsList: [] }));
     setClientName('');
     setError(false);
   };
+
+// definimos una función que maneja la creación de una nueva orden y envía los datos al servidor para su 
+//procesamiento. Primero validamos si se proporcionó el nombre del cliente y si se agregaron productos a la orden. 
+//Si es así, formateamos los datos de la orden y los enviamos al servidor. Si no, establecemos el estado de error en verdadero.
 
   const handlePost = () => {
     const name = clientName.trim() === '' || clientName.length < 2;
