@@ -46,4 +46,13 @@ describe('Comportamiento', () => {
     expect(handleSubmit).toHaveBeenCalledWith(user.userEmail, user.userContraseña);
   });
 
+  test('Debería mostrar un mensaje de error cuando se ingresa una contraseña incorrecta', () => {
+    render(<FormLogin user= {user} error={{ ...error, userContraseña: true }} />);
+    const passwordInput = screen.getByLabelText(/Contraseña/i);
+    userEvent.type(passwordInput, '123456');
+    const submitButton = screen.getByRole('button', { name: /Iniciar sesión/i });
+    userEvent.click(submitButton);
+    screen.getByText('La contraseña ingresada es incorrecta');
+  });
+
 });
