@@ -1,6 +1,10 @@
 /* eslint-disable import/prefer-default-export */
 import { rest } from 'msw';
 
+
+// Manejadores de solicitudes HTTP simulados para la API ficticia.
+// Cada manejador simula una respuesta de la API a una solicitud HTTP en particular.
+
 export const handlers = [
   rest.get('http://localhost:3000/users', (_req, res, ctx) => res(
     ctx.status(200),
@@ -26,6 +30,8 @@ export const handlers = [
     ctx.json(req.body),
   )),
 
+
+  // GET productos
   rest.get('http://localhost:3000/products', (_req, res, ctx) => res(
     ctx.status(200),
     ctx.json({
@@ -34,7 +40,7 @@ export const handlers = [
       price: '15',
       image: '',
       type: 'burger',
-      date: '2020-07-15',
+      date: '2022-07-15',
     }),
   )),
 
