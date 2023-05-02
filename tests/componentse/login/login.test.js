@@ -33,4 +33,17 @@ describe('Comportamiento', () => {
     userEvent.click(submitButton);
     screen.getByText('Por favor, complete todos los campos');
   });
+
+  test('Debería llamar a la función onSubmit cuando se envía un formulario válido', () => {
+    const handleSubmit = jest.fn();
+    render(<FormLogin user= {user} error={error} onSubmit={handleSubmit} />);
+    const emailInput = screen.getByLabelText(/Correo electrónico/i);
+    const passwordInput = screen.getByLabelText(/Contraseña/i);
+    const submitButton = screen.getByRole('button', { name: /Iniciar sesión/i });
+    userEvent.type(emailInput, user.userEmail);
+    userEvent.type(passwordInput, user.userContraseña);
+    userEvent.click(submitButton);
+    expect(handleSubmit).toHaveBeenCalledWith(user.userEmail, user.userContraseña);
+  });
+
 });
