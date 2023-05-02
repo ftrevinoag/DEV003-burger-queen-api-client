@@ -39,10 +39,10 @@ const Header = ({ title }) => {
           && (
           <>
             <Link to="/userlist">
-              <li>Administrar usuarios</li>
+              <li>Admin users</li>
             </Link>
             <Link to="/productlist">
-              <li>Administrar productos</li>
+              <li>Admin products</li>
             </Link>
           </>
           )}
