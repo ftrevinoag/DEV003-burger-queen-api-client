@@ -8,6 +8,7 @@ import { getOrders, putOrder } from '../../controller/order';
 const KitchenOrder = () => {
   const [pending, setPending] = useState([]);
 
+    // Crear un efecto para cargar los pedidos pendientes al iniciar la página
   useEffect(() => {
     getOrders().then((resp) => {
       resp.forEach((order) => {
@@ -16,13 +17,18 @@ const KitchenOrder = () => {
     });
   }, []);
 
+    // Crear un efecto para cargar los pedidos pendientes al iniciar la página
   const handleOrder = (order) => {
+        // Encontrar el pedido correspondiente
     const arrOrder = pending.find((item) => (item.order === order));
     if (arrOrder.status === 'pending') {
+            // Crear un objeto con la nueva información del pedido
       const obj = {
         status: 'delivering',
       };
+// Actualizar el estado del pedido en la base de datos
       putOrder(obj, arrOrder._id).then((resp) => console.log(resp));
+// Remover el pedido de la lista de pedidos pendientes en la página
       setPending(pending.filter((item) => item._id !== arrOrder._id));
     }
   };
