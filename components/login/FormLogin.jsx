@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { postAuth, getUserByEmail } from '../../controller/auth';
+import { postAuth, getUserByEmail } from '../../burger-queen/src/controller/auth';
 
 const FormLogin = () => {
   const history = useHistory();

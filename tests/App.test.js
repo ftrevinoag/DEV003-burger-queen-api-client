@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import App from '../../App';
-import Header from '../../components/Header';
-import LogIn from '../../components/login/LogIn';
-import Menu from '../../components/order/Menu';
+import App from '../App';
+import Header from '../components/Header';
+import LogIn from '../components/login/LogIn';
+import Menu from '../components/order/Menu';
 import UserList from '../../components/admin/users/UserList';
-import ProductList from '../../components/admin/products/ProductList';
+import ProductList from '../components/admin/products/ProductList';
 
 describe('App', () => {
   test('Deberia encontrar el componente App', () => {

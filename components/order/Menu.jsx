@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts } from '../../controller/admin-products';
-import Header from '../Header';
+import Header from '../../Header';
 import ProductsMenu from './ProductsMenu';
 import OrderList from './orderList';
 

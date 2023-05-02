@@ -5,7 +5,7 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { putOrder } from '../../controller/order';
+import { putOrder } from '../../burger-queen/src/controller/order';
 
 const DeliverSection = ({
   arr, setDelivering, setDelivered, check,
